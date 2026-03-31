@@ -1,0 +1,7 @@
+# 选用 NexT 最经典的 Gemini 侧边栏排版方案
+scheme: Gemini
+# 强制开启纯正的暗黑模式
+darkmode: true
+
+custom_file_path:
+  style: source/_data/styles.styl

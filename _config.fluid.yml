@@ -1,0 +1,37 @@
+# 导航栏配置：替换左上角的默认标志
+navbar:
+  blog_title: "XUBEIBEI"  # 这里不仅会改掉左上角，还会影响部分全局标题
+
+# 1. 开启暗黑模式
+dark_mode:
+  enable: true
+  default: auto
+
+# 2. 挂载我们马上要写的 CSS 和 JS 魔法
+custom_css:
+  - /css/custom.css
+# 挂载自定义 JS
+# 挂载自定义 JS
+custom_js:
+  - /js/particles-init.js  # 👈 这是我们马上要重写的物理引擎核心
+  - https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/lib/vanilla-tilt.min.js 
+  - /js/tilt-init.js
+
+index:
+  banner_img: ""
+  text: "XUBEIBEI"   # 👈 必须把这行加回来！
+  slogan:
+    enable: true
+    text: "Sensing the World // C++ // Algorithms"
+
+# 6. 拯救代码块：强制启用顶级极客高亮主题
+code:
+  copy_btn: true           # 顺便给你加上一键复制按钮
+  highlight:
+    enable: true
+    lib: 'highlightjs'     # 使用最稳定的高亮引擎
+    highlightjs:
+      style: 'github-gist'       # 如果你切到白天模式，用极其干净的 GitHub 纯白风
+      style_dark: 'atom-one-dark' # 在暗黑模式下，强制使用高对比度的经典极客主题
+
+favicon: /img/my-logo.png
