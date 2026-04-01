@@ -119,3 +119,90 @@ code, pre {
 [data-user-color-scheme="dark"] .typed-cursor {
   color: #D2A8FF !important;
 }
+
+/* =========================================
+   Google Material / 硅谷大厂级 UI 重构
+   ========================================= */
+
+/* 1. 拯救导航栏：全局沉浸式毛玻璃，完美融入背景网格 */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !important; /* 极细的底边线 */
+  border: none !important;
+}
+[data-user-color-scheme="dark"] .navbar {
+  background-color: rgba(13, 17, 23, 0.6) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 2. 隐身主画板：去掉原来那个巨大、沉闷的底座 */
+.board {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 3. 独立卡片化 (Card UI)：让每一篇文章都成为独立的悬浮舱 */
+.index-card {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 16px !important;
+  padding: 30px !important;
+  margin-bottom: 24px !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.index-card:hover {
+  transform: translateY(-4px) scale(1.005);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+/* 黑夜模式的卡片：采用 GitHub 深空灰与极其克制的蓝色高亮 */
+[data-user-color-scheme="dark"] .index-card {
+  background: #161b22 !important; 
+  border: 1px solid #30363d !important;
+  box-shadow: none !important;
+}
+[data-user-color-scheme="dark"] .index-card:hover {
+  border-color: #58a6ff !important; /* 交互反馈：悬浮时亮起蓝色极客边框 */
+  box-shadow: 0 8px 30px rgba(88, 166, 255, 0.1) !important;
+}
+
+/* 4. 详情页也需卡片化：点进文章后的阅读体验优化 */
+.post-content {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 40px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03) !important;
+}
+[data-user-color-scheme="dark"] .post-content {
+  background: #161b22 !important;
+  border: 1px solid #30363d !important;
+  box-shadow: none !important;
+}
+
+/* 5. 字体对比度 (Typography Hierarchy)：拉开标题与摘要的层级 */
+.index-header a {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important; /* 白天：极深蓝 */
+  letter-spacing: -0.5px !important;
+}
+.index-excerpt {
+  color: #64748b !important; /* 白天：低调的灰蓝色 */
+  line-height: 1.7 !important;
+  font-size: 1.05rem !important;
+  margin-top: 14px !important;
+}
+[data-user-color-scheme="dark"] .index-header a {
+  color: #e6edf3 !important; /* 黑夜：高亮白 */
+}
+[data-user-color-scheme="dark"] .index-excerpt {
+  color: #8b949e !important; /* 黑夜：暗灰色摘要 */
+}
+
+/* 6. 修复巨型渐变标语被导航栏压住的问题 */
+.banner-info {
+  margin-top: 18vh !important; /* 增加上边距，把标语往下推到视觉中心 */
+}
