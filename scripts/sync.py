@@ -15,8 +15,14 @@ notion = Client(auth=NOTION_TOKEN)
 def sync_articles():
     print("🤖 正在连接 Notion 数据库...")
     # 2. 核心过滤器：严密狙击 "Post" + "Published"
-    query = notion.databases.query(
-        database_id=DATABASE_ID,
+    # 2. 核心过滤器：严密狙击 "Post" + "Published" (适配 Notion 最新 API)
+    # 先获取数据库底层绑定的 data_source_id
+    db_info = notion.databases.retrieve(database_id=DATABASE_ID)
+    data_source_id = db_info["data_sources"][0]["id"]
+    
+    # 使用最新的 data_sources 接口查询文章
+    query = notion.data_sources.query(
+        data_source_id=data_source_id,
         filter={
             "and": [
                 {"property": "status", "select": {"equals": "Published"}},
