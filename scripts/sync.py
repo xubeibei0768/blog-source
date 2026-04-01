@@ -59,7 +59,7 @@ def sync_articles():
         print(f"⏳ 正在转换: 《{title}》...")
         
         # 4. 将 Notion Block 原生转为 Markdown
-      md_content = StringExporter(block_id=page_id, notion_client=notion).export()
+        md_content = StringExporter(block_id=page_id, notion_client=notion).export()
         
         # 5. 拼装 Hexo 的 Front-matter
         front_matter = f"---\ntitle: {title}\ndate: {date_formatted}\ncategories:\n  - {category}\n"
