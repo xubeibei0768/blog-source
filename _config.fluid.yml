@@ -13,9 +13,10 @@ custom_css:
 # 挂载自定义 JS
 # 挂载自定义 JS
 custom_js:
-  - /js/particles-init.js  # 👈 这是我们马上要重写的物理引擎核心
-  - https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/lib/vanilla-tilt.min.js 
-  - /js/tilt-init.js
+  - /js/particles-init.js
+  # ⬇️ 删掉或注释掉下面这两行，不需要 3D 倾斜了
+  # - https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/lib/vanilla-tilt.min.js 
+  # - /js/tilt-init.js
 
 index:
   banner_img: ""
