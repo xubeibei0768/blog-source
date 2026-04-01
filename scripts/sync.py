@@ -14,7 +14,6 @@ notion = Client(auth=NOTION_TOKEN)
 
 def sync_articles():
     print("🤖 正在连接 Notion 数据库...")
-    # 2. 核心过滤器：严密狙击 "Post" + "Published"
     # 2. 核心过滤器：严密狙击 "Post" + "Published" (适配 Notion 最新 API)
     # 先获取数据库底层绑定的 data_source_id
     db_info = notion.databases.retrieve(database_id=DATABASE_ID)
