@@ -35,3 +35,11 @@ code:
       style_dark: 'atom-one-dark' # 在暗黑模式下，强制使用高对比度的经典极客主题
 
 favicon: /img/my-logo.png
+
+menu:
+  - { key: 'home', link: '/', icon: 'iconfont icon-home-fill' }
+  - { key: 'C++与算法', link: '/categories/Algorithm/', icon: 'iconfont icon-code' }
+  - { key: '多模态感知', link: '/categories/Perception/', icon: 'iconfont icon-radar' }
+  - { key: '英语进阶', link: '/categories/English/', icon: 'iconfont icon-english' }
+  - { key: '归档', link: '/archives/', icon: 'iconfont icon-archive-fill' }
+  - { key: '关于我', link: '/about/', icon: 'iconfont icon-user-fill' }

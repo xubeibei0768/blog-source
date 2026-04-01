@@ -1,8 +1,20 @@
 // 监听网页加载完毕
 document.addEventListener('DOMContentLoaded', function() {
   // 锁定 Fluid 主题的核心文章卡片 (.board)
-  const element = document.querySelector(".board");
+  if (window.innerWidth < 768) return;
   
+  const element = document.querySelector(".board");
+  if (element) {
+    VanillaTilt.init(element, {
+      max: 3,
+      speed: 1000,
+      glare: true,
+      "max-glare": 0.15,
+      scale: 1.01,
+      transition: true
+    });
+  }
+
   if (element) {
     VanillaTilt.init(element, {
       max: 3,                // 最大倾斜角度（保持克制，3度刚刚好）

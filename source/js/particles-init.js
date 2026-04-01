@@ -2,7 +2,10 @@
 // 极简深海流体引擎 (Ultra-Slow Fluid)
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
+     if (window.innerWidth < 768) return;
+
     const canvas = document.createElement('canvas');
+    canvas.id = 'gravity-canvas';
     canvas.id = 'gravity-canvas';
     canvas.style.position = 'fixed';
     canvas.style.top = '0';
